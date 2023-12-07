@@ -17,6 +17,7 @@ let solution = -1;
 let score = 0;
 let totalQuestions = 0;
 let correct = 0;
+let defaultTimer = 120
 
 // This function checks if the user is already logged in
 // if yes greet the user
@@ -114,7 +115,7 @@ const restartGame = () => {
   currentScore.innerText = score;
   correct = 0;
   fetchProblem();
-  startTimer(600);
+  startTimer(defaultTimer);
 };
 
 // when user clicks the logout button, delete the cookie and redirect the user to login page
@@ -131,4 +132,4 @@ playAgainBtn.addEventListener("click", restartGame);
 
 // start the game
 fetchProblem();
-startTimer(600);
+startTimer(defaultTimer);

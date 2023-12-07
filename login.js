@@ -14,8 +14,8 @@ const onLoginFormSubmit = (e) => {
   e.preventDefault();
   let loginData = new FormData(loginForm);
   if (
-    !loginData.get("username") === "test" ||
-    !loginData.get("password") === "test123"
+    loginData.get("username") !== "test" ||
+    loginData.get("password") !== "test123"
   ) {
     alert("Invalid username or password!");
     return;
