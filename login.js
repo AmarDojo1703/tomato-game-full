@@ -1,5 +1,15 @@
 const loginForm = document.getElementById("loginForm");
 
+const onDOMContentLoaded = (e) => {
+  if (
+    document.cookie
+      .split(";")
+      .some((item) => item.trim().startsWith("username=test"))
+  ) {
+    location.href = "index.html";
+  }
+};
+
 const onLoginFormSubmit = (e) => {
   e.preventDefault();
   let loginData = new FormData(loginForm);
@@ -15,4 +25,5 @@ const onLoginFormSubmit = (e) => {
   location.href = "index.html";
 };
 
+document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
 loginForm.addEventListener("submit", onLoginFormSubmit);
