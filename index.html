@@ -29,7 +29,64 @@
       </div>
     </header>
 
-    <div class="container mx-auto mt-8 p-4">Game Container</div>
+    <div class="container mx-auto mt-8 p-4 flex">
+      <div class="flex-1 mt-8 pr-8">
+        <img src="" alt="Image" id="problemImage" class="w-full h-auto" />
+      </div>
+
+      <div class="flex-2 pl-8 border-l border-gray-300">
+        <div class="text-xl p-4 text-red-500">
+          Timer: <span id="timer">10:00</span>
+        </div>
+        <ul class="list-none space-y-4">
+          <li
+            class="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
+          >
+            Question No.: <span id="questionNo">1</span>
+          </li>
+          <li
+            class="bg-green-500 text-white p-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out"
+          >
+            Score: <span id="currentScore">0</span>
+          </li>
+        </ul>
+
+        <form id="solutionForm" class="mt-8">
+          <div class="mb-4">
+            <label for="text" class="block text-sm font-medium text-gray-600"
+              >Enter the correct number</label
+            >
+            <input
+              type="number"
+              id="solutionTxt"
+              name="solutionTxt"
+              max="9"
+              min="0"
+              step="1"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="solutionBtn"
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            id="playAgainBtn"
+            class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          >
+            Play again
+          </button>
+        </form>
+        <div class="text-xl p-4 text-grey-500">
+          <p id="endGameMessage"></p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
